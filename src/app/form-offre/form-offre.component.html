@@ -1,0 +1,201 @@
+
+<div   mat-dialog >
+
+  <div #edit class="edit_note"><mat-icon style="   transform: scale(1.5);
+    ">edit_note</mat-icon></div>
+      
+
+<h1  mat-dialog-title>Créer une nouvelle offre d'emploi    
+  <button  mat-dialog-close  mat-icon-button   style="margin-left: 30%; "  aria-label="Example icon button with a home icon">
+     
+  <mat-icon   >close</mat-icon> </button>
+</h1>
+<div   mat-dialog-content>  <h3>ajoutez quelques informations ici pour créer votre offre d'emploi </h3></div>
+<form [formGroup]='formOffre'  id="profileForm"  autocomplete="off">
+<div   class="form1"  #form1 >
+<span>Nom du poste à pourvoir</span>
+    <mat-form-field   class="mat-form-field" appearance="fill">
+        <mat-label>Intitulé du poste</mat-label>
+        <input [placeholder]="formOffre.value.titre" formControlName="titre" matInput>
+      </mat-form-field>
+      <span>Département</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Département</mat-label>
+        <mat-select aria-placeholder="formOffre.value.departement" formControlName="departement">
+          
+          <mat-option *ngFor="let d of Departments"
+          value={{d.id}} >{{d.nom}}</mat-option>
+        
+        </mat-select>
+        
+      </mat-form-field>
+      
+      <span>Déscription du poste </span>
+      <mat-form-field  style="     background-color:white;  height: 24vh" appearance="fill">
+        <mat-label >Déscription du poste </mat-label>
+        <textarea [placeholder]="formOffre.value.description"  formControlName="description" style="     height: 20vh" matInput></textarea>
+      </mat-form-field>
+
+
+</div>
+   
+
+
+ 
+
+
+
+    
+       <div class="form2"  style="display: none; "  id="profileForm"  autocomplete="off" #form2>
+          <span>Rémunération</span>
+          <mat-form-field style="background-color: white; " appearance="fill" floatLabel="always">
+            <mat-label>salaire</mat-label>
+            <input [placeholder]="formOffre.value.remuneration"  formControlName="remuneration" matInput type="number" class="example-right-align" placeholder="0">
+            <span matPrefix>DH&nbsp;</span>
+            <span matSuffix>.00</span>
+          </mat-form-field>
+          <span>équipe de recrutement</span>
+          <mat-form-field  style="background-color: white;" appearance="fill">
+            <mat-label>équipe</mat-label>
+            <mat-select [placeholder]="formOffre.value.equipe" formControlName="equipe">
+              
+              <mat-option  value={{e.id}} *ngFor="let e of equipes">{{e.nom}}</mat-option>
+             
+            </mat-select>
+            </mat-form-field>
+
+
+
+
+
+
+
+
+
+           
+
+
+
+
+
+              <span>savoir-faire</span>
+
+              <mat-form-field  
+           
+               style="overflow-y: auto; height: 100px;"
+               class="example-chip-list" appearance="fill">
+                  <mat-label>Nouvelle éxigence</mat-label>
+                  <mat-chip-list   #chipList aria-label="softSkill selection">
+                   
+                    <mat-chip  
+  
+                    style=" border: solid;  color:rgb(5, 53, 141); background-color: white;"
+                      *ngFor="let hardSkill of hardSkills"
+                      [selectable]="selectable"
+                      [removable]="removable"
+                    
+                      (removed)="removeHard(hardSkill)">
+                      <mat-icon    style="    border:hidden; background-color: white;  margin-right: 2px;  color: rgb(5, 53, 141);" >school</mat-icon>
+                     
+                   
+                      {{hardSkill}}
+                   
+                          <mat-icon  matChipRemove *ngIf="removable"  appearance="fill" style="    border:hidden; background-color: white; margin-bottom: 5px; margin-right: 5px;  color: rgb(5, 53, 141);" >cancel</mat-icon>
+                     
+                    </mat-chip>
+                    <input 
+                    (input)="chercherHard($event)"
+                    (mousedown)="initialiserListeHard()"
+                      placeholder="Recherche..."
+                      #hardSkillInput
+                  
+                      [matAutocomplete]="auto"
+                      [matChipInputFor]="chipList"
+                  
+                     >
+                  </mat-chip-list>
+                  <mat-autocomplete   #auto="matAutocomplete" (optionSelected)="selectedHard($event)">
+                    <mat-option *ngFor="let hardSkill of ListedhardSkills" [value]="hardSkill">
+                      {{ hardSkill}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+  
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+                  
+    
+
+                <span>savoir-etre</span>
+                <mat-form-field  
+                (mouseover)="initialiserListeSoft()"
+                style="overflow-y: auto; height: 100px;"
+                      class="example-chip-list" appearance="fill">
+                         <mat-label>Nouvelle éxigence</mat-label>
+                         <mat-chip-list   #chipListt aria-label="softSkill selection">
+                          
+                           <mat-chip  
+         
+                           style=" border: solid;  color:rgb(119, 134, 161); background-color: white;"
+                             *ngFor="let  softSkill of softSkills"
+                             [selectable]="selectable"
+                             [removable]="removable"
+                           
+                             (removed)="removeSoft(softSkill)">
+                             <mat-icon    style="    border:hidden; background-color: white;  margin-right: 2px;  color: rgb(5, 53, 141);" >school</mat-icon>
+                            
+                          
+                             {{softSkill}}
+                          
+                                 <mat-icon  matChipRemove *ngIf="removable"  appearance="fill" style="    border:hidden; background-color: white; margin-bottom: 5px; margin-right: 5px;  color: rgb(5, 53, 141);" >cancel</mat-icon>
+                            
+                           </mat-chip>
+                           <input 
+                           (input)="chercherSoft($event)"
+                         
+                             placeholder="Recherche..."
+                             #softSkillInput
+                         
+                             [matAutocomplete]="auto2"
+                             [matChipInputFor]="chipListt"
+                         
+                            >
+                         </mat-chip-list>
+                         <mat-autocomplete   #auto2="matAutocomplete" (optionSelected)="selectedSoft($event)">
+                           <mat-option *ngFor="let softSkill of ListedSoftSkills" [value]="hardSkill">
+                             {{ softSkill}}
+                           </mat-option>
+                         </mat-autocomplete>
+                       </mat-form-field>
+         
+                      </div>
+       
+
+      
+        </form>
+    
+    
+
+        <div  style=" position:absolute; top:81%;" mat-dialog-actions>
+            <button mat-raised-button   (click)="onPrevious(next,form1,form2)" >Précédent</button>
+            <button #next     (click)="save(next,form1,form2)"   mat-raised-button >Suivant</button>
+    
+          </div>
+
+          
+</div>

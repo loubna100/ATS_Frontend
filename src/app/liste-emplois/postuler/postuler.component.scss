@@ -1,0 +1,42 @@
+.form1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    .mat-form-field
+    {
+       
+      margin-top: 15px;
+      height: 50px;
+        width: 90%;
+        background-color:white;
+    
+    }
+  
+  }
+  span
+  {
+      margin-top: 10px;
+  }
+
+  
+ ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #faab1a;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #faab1a,
+  }

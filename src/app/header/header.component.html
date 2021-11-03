@@ -1,0 +1,44 @@
+
+<div id="nav">
+    <ul class="iconsList">
+       <li>   
+         
+        <button mat-icon-button   class="btn btn-secondary "[matMenuTriggerFor]="menu"   aria-label="Example icon button with a vertical three dot icon">
+         
+      
+        <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
+          <!-- Include text description of the icon's meaning for screen-readers -->
+        </button>
+      </li>
+   <li> <div class="dropdown">
+     
+    <button mat-icon-button   class="btn btn-secondary "[matMenuTriggerFor]="menu"   aria-label="Example icon button with a vertical three dot icon">
+      <mat-icon>       person</mat-icon>
+    </button>
+     
+      </div>  
+    </li>
+    </ul>
+  
+    <div class="Search">
+      
+        <mat-form-field appearance="fill">
+            <mat-label>Recherche</mat-label>
+            <input matInput>
+          </mat-form-field>
+            <button >
+
+            <mat-icon>search</mat-icon>
+          </button>
+
+        
+<mat-menu #menu="matMenu">
+  <a mat-menu-item>compte</a>
+  <a mat-menu-item   routerLink="/">se déconnecter</a>
+</mat-menu>
+        </div>
+        
+<h2>
+    Offres
+</h2>
+</div>

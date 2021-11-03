@@ -1,0 +1,47 @@
+.dashboard{
+    position: fixed;
+ 
+       width: 15%;
+       height: 150%;
+   background-color: white;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+font-size: 16px;
+   }
+  
+   .logo
+   {
+ 
+    width: 80%;
+    height:20vh;
+  padding-bottom: 5%;
+    margin-left: 9%;
+
+    border-bottom: 2px solid rgb(255, 244, 90);
+   
+       background-repeat: no-repeat;
+    background-image: url('../../assets/img/logo.jpg');
+   }
+   .notActive
+   {
+      list-style-type:none;
+
+      margin-bottom: 10%;
+      width: 80%;
+      text-align: left;
+      height: 5vh;
+padding-top: 5px;
+padding-left: 6px;
+font-weight: bolder;
+
+   }
+
+
+   
+   li mat-icon {
+      text-align: left;
+      margin-right:8%;
+
+   }
+
+
+   

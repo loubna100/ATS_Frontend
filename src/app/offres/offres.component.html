@@ -1,0 +1,155 @@
+<div class="container">
+
+
+    
+  
+ 
+      <button mdc-fab   (click)="onClick(select)"   extended icon="filter_alt" label="Filtrer" ></button>
+    
+    <div class="filter" #select >
+      <h4>Filtrer par</h4>
+      <p>
+        Sélectionnez une condition pour filtrer par</p>
+      <mdc-select  class="select"  class="demo-select-width" placeholder="Departement"  class="custom-select-outline-color">
+        <mdc-menu>
+          <mdc-list>
+            <mdc-list-item value="444" >
+         444
+            </mdc-list-item>
+          </mdc-list>
+        </mdc-menu>
+      </mdc-select>
+      <mdc-select  class="select"  class="demo-select-width" placeholder="Statut"  class="custom-select-outline-color">
+        <mdc-menu>
+          <mdc-list>
+            <mdc-list-item value="444" >
+         444
+            </mdc-list-item>
+          </mdc-list>
+        </mdc-menu>
+      </mdc-select>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <button mdc-button (click)="openDialog()"  class="btnAdd"  >
+        <mdc-icon>add</mdc-icon>Nouvelle offre d'emploi
+      </button>
+     
+ <div class="titre">  <h3>
+        Offres   <mdc-icon> work</mdc-icon> </h3>
+  <p>Liste de toutes vos offres d'emploi. Vous pouvez les filtrer par service ou statut.
+  </p>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table">
+    <mdc-data-table>
+        <table mdcDataTableTable>
+          <thead>
+            <tr mdcDataTableHeaderRow>
+              <th mdcDataTableHeaderCell>Titre</th>
+              <th mdcDataTableHeaderCell >Créée le</th>
+              <th mdcDataTableHeaderCell >candidatures</th>
+              <th mdcDataTableHeaderCell >status</th>
+              <th mdcDataTableHeaderCell >Action</th>
+            </tr>
+          </thead>
+          <tbody mdcDataTableContent>
+         
+            <tr  *ngFor="let poste of postes" mdcDataTableRow >
+              <td mdcDataTableCell>{{poste.titre}}</td>
+              <td mdcDataTableCell >{{poste.dateCreation}}</td>
+              <td mdcDataTableCell ><div class="cdt_nbr">11</div></td>
+              <td mdcDataTableCell > 
+           {{poste.status}}
+              </td>
+              
+              <td>
+            
+       
+                <mdc-tab-bar  iconIndicator='donut_large'>
+                  
+              <mdc-tab-scroller>
+                    
+              
+                    <div class="tooltip">     <mdc-tab   icon="delete"> </mdc-tab>
+                        <span  class="tooltip-text">delete</span> </div>
+                    
+    
+    
+                        <div class="tooltip">     <mdc-tab   icon="share"> </mdc-tab>
+                          <span  class="tooltip-text">publier</span> </div>
+    
+                          <div class="tooltip">
+                            <mdc-tab  icon="arrow_forward"> </mdc-tab>
+                       
+                           
+                        <span class="tooltip-text">detail</span> </div>
+                    </mdc-tab-scroller>
+                  </mdc-tab-bar> </td>  
+            </tr>
+             
+          
+            
+            
+         
+            
+          </tbody>
+        </table>
+      </mdc-data-table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<div class="paginationBtn">  <button (click)="onClickPrevious()"> <mdc-icon class="nbrPage" >keyboard_double_arrow_left</mdc-icon></button> 
+    <button (click)="onClickOne()" > <mdc-icon  class="nbrPage" >looks_one</mdc-icon></button>  
+   <button (click)="onClickTwo()"> <mdc-icon class="nbrPage" >looks_two</mdc-icon></button> 
+ 
+   <button (click)="onClickNext()"> <mdc-icon class="nbrPage" >keyboard_double_arrow_right</mdc-icon></button>
+ </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

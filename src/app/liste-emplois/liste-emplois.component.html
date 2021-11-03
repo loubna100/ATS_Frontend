@@ -1,0 +1,36 @@
+ 
+<div class="content">
+  <img width="100%" height="600px"  class="bottom"style=" position: absolute;" src="../../assets/img/back.jpg">
+  
+   <img width="100%" height="600px"  class="top" style=" position: relative;" src="../../assets/img/img1.jpg">
+
+  <div id="boxSearch">
+   <h1>
+        Découvrez les Offres d'emploi !     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </h1>
+   <div class="inputsearch">
+
+    <mat-form-field style="width:90% ;background-color: white;  " appearance="legacy">
+        <mat-label>Chercher emploi par son nom </mat-label>
+        <input matInput placeholder="emploi">
+    
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="offres.length>0" class="liste">
+    <mat-paginator style="font-weight: bold;"  [length]="offres.length" [pageSizeOptions]="[2, 5, 10]" aria-label="Select page">
+    </mat-paginator>
+   
+    <div *ngFor="let offre of offres"  class="cart">
+
+        <h1>{{offre.titre}} </h1>
+        <button class="postuler" (click)="openDialog(offre)" mat-icon-button  class="btn btn-secondary "   aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon>           chevron_right</mat-icon>
+          </button>
+    </div>
+   
+</div>
+</div>
+   
+    </div>

@@ -1,0 +1,32 @@
+
+
+    
+<div class="content">
+
+    <router-outlet></router-outlet>
+  
+</div>
+
+    <nav  mat-align-tabs="center"  class="header"  mat-tab-nav-bar >
+        <diV class="logo"></diV>
+        <h3>Mercure IT</h3>
+        <a   style="margin-top: 50px;" mat-tab-link *ngFor="let link of links" routerLink={{link.destination}}
+           (click)="activeLink = link"
+           [active]="activeLink == link"> {{link.nom}} </a>
+      
+      </nav>
+      
+    <div  class="dropdown login">
+       
+
+        <button mat-icon-button  class="btn btn-secondary "[matMenuTriggerFor]="menu"   aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon>       person</mat-icon>
+          </button>
+     
+      </div>  
+
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item>s'inscrire</a>
+        <a mat-menu-item>se connecter</a>
+      </mat-menu>
+   

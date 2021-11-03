@@ -1,0 +1,50 @@
+<h2  style="font-weight: bold; padding-bottom: 10px; font-size: 45px; text-align: center; font-family: cursive;color:rgb(1, 1, 160)" mat-dialog-title> {{offre.titre}}</h2>
+<mat-dialog-content class="mat-typography">
+    <div style=" overflow-wrap: break-word; word-wrap: break-word;" class="description" *ngIf="!_postuler">
+
+      <pre> <p style="font-weight: bolder; ">{{offre.description}} </p> </pre> 
+
+
+    </div>
+
+    <div *ngIf="_postuler">
+    <p>Veuillez remplir les champs ci dessous avant de postuler </p>
+
+
+    <div   class="form1"  #form1 >
+    <span>Nom du poste à pourvoir</span>
+    <mat-form-field   class="mat-form-field" appearance="fill">
+        <mat-label>Intitulé du poste</mat-label>
+        <input [placeholder]="" formControlName="titre" matInput>
+      </mat-form-field>
+      <span>Nom du poste à pourvoir</span>
+      <mat-form-field   class="mat-form-field" appearance="fill">
+        <mat-label>Intitulé du poste</mat-label>
+        <input [placeholder]="" formControlName="titre" matInput>
+      </mat-form-field>
+
+      <span>Nom du poste à pourvoir</span>
+      <mat-form-field   class="mat-form-field" appearance="fill">
+        <mat-label>Intitulé du poste</mat-label>
+        <input [placeholder]="" formControlName="titre" matInput>
+      </mat-form-field>
+
+
+
+
+      <mat-slider
+      thumbLabel
+      [displayWith]="formatLabel"
+      tickInterval="1000"
+      step="1000"
+      min="0"
+      max="100000"
+      aria-label="units"></mat-slider>
+    </div>
+
+</div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button #p mat-button (click)="postuler(p)" cdkFocusInitial>postuler</button>
+</mat-dialog-actions>

@@ -1,0 +1,69 @@
+
+
+
+@use '@material/theme' with (
+    $primary: grey,
+    $secondary: #faab1a,
+    $background: #fff,
+  );
+  
+  // MDC Typography
+  
+  
+  // MDC Button
+  
+  
+  // Angular MDC
+  
+  
+  @use '@angular-mdc/theme/material';
+@use '@material/button/mdc-button';
+@use '@material/button';
+
+@use '@material/textfield/mdc-text-field';
+@use '@material/textfield/_index' as textfield;
+@use '@material/form-field/_index' as form-field;
+@use '@material/typography/mdc-typography';
+
+@use '@material/chips/mdc-chips';
+@use '@material/chips';
+
+
+@use '@material/fab/mdc-fab';
+@use '@material/fab';
+
+@use '@material/dialog/mdc-dialog';
+@use '@material/dialog';
+
+
+
+
+
+@use '@material/tab-bar/mdc-tab-bar';
+@use '@material/tab-bar';
+@use '@material/tab-scroller/mdc-tab-scroller';
+@use '@material/tab-scroller';
+@use '@material/tab-indicator/mdc-tab-indicator';
+@use '@material/tab-indicator';
+@use '@material/tab/mdc-tab';
+@use '@material/tab';
+
+
+@use '@material/data-table/mdc-data-table';
+@use '@material/data-table';
+
+@use '@material/select/mdc-select';
+@use '@material/select/_index' as select;
+@use '@material/list/mdc-list';
+@use '@material/menu-surface/mdc-menu-surface';
+@use '@material/menu/mdc-menu';
+body{
+    background-color: rgb(238, 238, 238);
+    margin: 0;
+
+    padding: 0;
+}
+
+
+
+

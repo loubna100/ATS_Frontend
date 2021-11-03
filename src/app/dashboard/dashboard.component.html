@@ -1,0 +1,16 @@
+
+<div  class="dashboard">
+    <div class="logo"></div>
+    <ul class="menu">
+     
+        <li class="notActive" style="background-color:#faab1a;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" (click)="click($event,candidatures,equipe,account)" routerLink="/admin/offres" #offres> <mat-icon  >edit_note</mat-icon>  Offres</li>
+        
+        <li class="notActive" (click)="click($event,offres,equipe,account)" #candidatures  routerLink="/admin/candidatures"> <mat-icon style="text-transform:none;" >description</mat-icon>Candidatures</li>
+    
+        <li  class="notActive" (click)="click($event,candidatures,offres,account)"  routerLink="/admin/equipe"  #equipe><mat-icon  style="transform-style:none;" >groups</mat-icon>  équipe</li>
+        
+        <li  class="notActive" (click)="click($event,candidatures,offres,equipe)"  routerLink="/admin/compte" #account><mat-icon  style="text-transform:none;" >manage_accounts</mat-icon> Compte</li>
+    </ul>
+    
+    </div>
+    

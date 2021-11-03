@@ -1,0 +1,56 @@
+
+.iconsList li
+{
+  list-style: none;
+ font-size: large;
+ color: rgb(110, 107, 107);
+ font-size: 50px;
+  padding-right: 20px;
+display: inline-block;
+}
+.iconsList
+{
+   
+    margin-top: 10px;
+    position: fixed;
+    margin-left: 125vh;
+}
+
+li .notif
+{
+   transform: scale(1.05);
+   margin-bottom: 10px;
+ position: fixed;
+    background-color:  #ffe5b5;
+    border-radius: 50%;
+
+}
+
+.Search
+{  margin-top: 5px;
+    position:fixed;
+
+margin-left: 90vh;
+
+}
+h2{
+    margin-top: 15px;
+    color: #989799;
+    font-size: 25px;
+}
+.Search button
+{
+width: 40px;
+height: 53px;
+padding-top: 8px;
+color: aliceblue;
+background-color: rgb(110, 107, 107);
+border: none;
+border-radius: 3px;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.Search button:hover{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transform: scale(1.05);
+}
+
